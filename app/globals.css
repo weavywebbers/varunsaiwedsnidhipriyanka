@@ -6,6 +6,7 @@
    ========================================================================== */
 
 :root {
+  --frame-max-width: 390px;
   --color-gold: #caa565;
   --color-gold-light: #fbd6a5;
   --color-gold-bright: #ffd700;
@@ -43,11 +44,11 @@ body {
 }
 
 /* ==========================================================================
-   Main Mobile Frame Lock (Universal Center, Max 390px)
+   Main Mobile Frame Lock (Universal Center, Responsive for Mobile & Tablet)
    ========================================================================== */
 #main-frame {
   width: 100%;
-  max-width: 390px;
+  max-width: var(--frame-max-width);
   height: 100vh;
   height: 100dvh;
   margin: 0 auto;
@@ -174,7 +175,7 @@ section,
 .header-controls {
   position: fixed;
   top: 16px;
-  right: calc(50% - 195px + 16px);
+  right: calc(50% - (var(--frame-max-width) / 2) + 16px);
   z-index: 999999;
   display: flex;
   flex-direction: row;
@@ -2950,4 +2951,311 @@ a[href*="framer.com"] {
   height: 0 !important;
   position: absolute !important;
   z-index: -99999 !important;
+}
+
+/* ==========================================================================
+   Tablet Portrait View (iPad Mini, iPad Air, iPad Pro, Android Tablets: 481px to 1024px)
+   Eliminates skinny stretched aspect ratio by expanding card proportionally
+   ========================================================================== */
+@media (min-width: 481px) and (orientation: portrait), (min-width: 481px) and (max-aspect-ratio: 1/1) {
+  :root {
+    --frame-max-width: min(92vw, calc(100dvh * 0.60), 640px);
+  }
+
+  .header-controls {
+    right: calc(50% - (var(--frame-max-width) / 2) + 20px);
+  }
+
+  .hanging-diya {
+    width: 68px;
+    top: -4px;
+  }
+
+  .hanging-diya.left-diya {
+    left: 20px;
+  }
+
+  .hanging-diya.right-diya {
+    right: 20px;
+  }
+
+  .hero-unified-container {
+    max-width: 460px;
+    padding: clamp(48px, 6vh, 60px) 16px 8px;
+  }
+
+  .hero-ganesha img {
+    width: 54px;
+  }
+
+  .hero-sloka {
+    font-size: 14px;
+    margin: 0 0 clamp(90px, 11vh, 115px) 0;
+  }
+
+  .hero-name {
+    font-size: 24px;
+  }
+
+  .hero-degree {
+    font-size: 13.5px;
+  }
+
+  .hero-honorific {
+    font-size: 14px;
+  }
+
+  .hero-weds {
+    font-size: 20px;
+  }
+
+  .hero-divider img {
+    width: 240px;
+    max-width: 75%;
+  }
+
+  .hero-venue-name {
+    font-size: 15px;
+  }
+
+  .hero-venue-address {
+    font-size: 13px;
+  }
+
+  .hero-date-day {
+    font-size: 32px;
+  }
+
+  .hero-date-th {
+    font-size: 16px;
+  }
+
+  .hero-date-month {
+    font-size: 19px;
+  }
+
+  /* Countdown on Tablet */
+  .countdown-content {
+    max-width: 380px;
+  }
+
+  .countdown-title {
+    font-size: 16px;
+  }
+
+  .countdown-timer-grid {
+    max-width: 290px;
+    gap: 6px;
+  }
+
+  .time-box {
+    min-width: 52px;
+  }
+
+  .time-value {
+    font-size: 29px;
+  }
+
+  .time-label {
+    font-size: 10px;
+  }
+
+  /* Haldi on Tablet */
+  .haldi-content {
+    max-width: 440px;
+  }
+
+  /* Sangeet on Tablet */
+  .sangeet-content {
+    max-width: 440px;
+    padding: clamp(95px, 11.5vh, 125px) 16px 16px;
+  }
+
+  .sangeet-title {
+    font-size: 32px;
+  }
+
+  .sangeet-venue-name {
+    font-size: 19.5px;
+  }
+
+  .sangeet-venue-loc {
+    font-size: 16.5px;
+  }
+
+  /* Wedding Invitation on Tablet */
+  .wedding-content {
+    max-width: 440px;
+  }
+
+  .muhurtham-card {
+    max-width: 380px;
+  }
+
+  .wedding-venue-card {
+    max-width: 380px;
+  }
+
+  /* Invited By on Tablet */
+  .invited-content {
+    max-width: 440px;
+  }
+
+  .maps-overlay-card {
+    max-width: 440px;
+  }
+}
+
+
+/* ==========================================================================
+   Tablet Portrait View (iPad Mini, iPad Air, iPad Pro, Android Tablets: 481px to 1024px)
+   Eliminates skinny stretched aspect ratio by expanding card proportionally
+   ========================================================================== */
+@media (min-width: 481px) and (orientation: portrait), (min-width: 481px) and (max-aspect-ratio: 1/1) {
+  :root {
+    --frame-max-width: min(92vw, calc(100dvh * 0.60), 640px);
+  }
+
+  .header-controls {
+    right: calc(50% - (var(--frame-max-width) / 2) + 20px);
+  }
+
+  .hanging-diya {
+    width: 68px;
+    top: -4px;
+  }
+
+  .hanging-diya.left-diya {
+    left: 20px;
+  }
+
+  .hanging-diya.right-diya {
+    right: 20px;
+  }
+
+  .hero-unified-container {
+    max-width: 460px;
+    padding: clamp(48px, 6vh, 60px) 16px 8px;
+  }
+
+  .hero-ganesha img {
+    width: 54px;
+  }
+
+  .hero-sloka {
+    font-size: 14px;
+    margin: 0 0 clamp(90px, 11vh, 115px) 0;
+  }
+
+  .hero-name {
+    font-size: 24px;
+  }
+
+  .hero-degree {
+    font-size: 13.5px;
+  }
+
+  .hero-honorific {
+    font-size: 14px;
+  }
+
+  .hero-weds {
+    font-size: 20px;
+  }
+
+  .hero-divider img {
+    width: 240px;
+    max-width: 75%;
+  }
+
+  .hero-venue-name {
+    font-size: 15px;
+  }
+
+  .hero-venue-address {
+    font-size: 13px;
+  }
+
+  .hero-date-day {
+    font-size: 32px;
+  }
+
+  .hero-date-th {
+    font-size: 16px;
+  }
+
+  .hero-date-month {
+    font-size: 19px;
+  }
+
+  /* Countdown on Tablet */
+  .countdown-content {
+    max-width: 380px;
+  }
+
+  .countdown-title {
+    font-size: 16px;
+  }
+
+  .countdown-timer-grid {
+    max-width: 290px;
+    gap: 6px;
+  }
+
+  .time-box {
+    min-width: 52px;
+  }
+
+  .time-value {
+    font-size: 29px;
+  }
+
+  .time-label {
+    font-size: 10px;
+  }
+
+  /* Haldi on Tablet */
+  .haldi-content {
+    max-width: 440px;
+  }
+
+  /* Sangeet on Tablet */
+  .sangeet-content {
+    max-width: 440px;
+    padding: clamp(95px, 11.5vh, 125px) 16px 16px;
+  }
+
+  .sangeet-title {
+    font-size: 32px;
+  }
+
+  .sangeet-venue-name {
+    font-size: 19.5px;
+  }
+
+  .sangeet-venue-loc {
+    font-size: 16.5px;
+  }
+
+  /* Wedding Invitation on Tablet */
+  .wedding-content {
+    max-width: 440px;
+  }
+
+  .muhurtham-card {
+    max-width: 380px;
+  }
+
+  .wedding-venue-card {
+    max-width: 380px;
+  }
+
+  /* Invited By on Tablet */
+  .invited-content {
+    max-width: 440px;
+  }
+
+  .maps-overlay-card {
+    max-width: 440px;
+  }
 }
