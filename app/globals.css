@@ -291,6 +291,10 @@ section,
   animation: lanternSwingRight 5.2s ease-in-out infinite;
 }
 
+.hanging-diya.right-diya .diya-img {
+  transform: scaleX(-1);
+}
+
 .diya-img {
   width: 100%;
   height: auto;
@@ -973,88 +977,110 @@ section,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%;
-  max-width: 360px;
+  width: 92%;
+  max-width: 380px;
   text-align: center;
+  margin: auto;
   padding: 20px 0;
 }
 
 .countdown-eyebrow {
-  font-size: 13px;
+  font-family: var(--font-serif);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 2px;
-  color: #7b1c2b;
-  margin: 0 0 2px 0;
+  letter-spacing: 2.5px;
+  color: #8b3a47;
+  margin: 0 0 4px 0;
   text-transform: uppercase;
 }
 
 .countdown-title {
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  color: #8b3a47;
-  margin: 0 0 20px 0;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #5c1420;
+  margin: 0 0 24px 0;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .countdown-timer-grid {
   display: flex;
   gap: 8px;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 24px;
+  align-items: flex-start;
+  margin: 0 auto 24px auto;
+  width: 100%;
 }
 
 .time-box {
-  background: rgba(120, 28, 43, 0.08);
-  border: 1px solid rgba(120, 28, 43, 0.25);
-  border-radius: 12px;
-  padding: 10px 8px;
-  width: 60px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0 2px;
+  width: auto;
+  min-width: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  box-shadow: none;
 }
 
 .time-value {
-  font-size: 24px;
+  font-family: var(--font-serif);
+  font-size: 32px;
   font-weight: 700;
-  color: #781c2b;
+  color: #5c1420;
   line-height: 1;
+  letter-spacing: 0.5px;
 }
 
 .time-label {
+  font-family: var(--font-serif);
   font-size: 10px;
-  letter-spacing: 1px;
-  color: #5c1420;
-  margin-top: 4px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #7b1c2b;
+  margin-top: 8px;
   text-transform: uppercase;
+  opacity: 0.85;
 }
 
 .time-separator {
-  font-size: 22px;
+  font-family: var(--font-serif);
+  font-size: 24px;
   font-weight: 700;
-  color: #781c2b;
+  color: #8b3a47;
+  line-height: 1;
+  padding-top: 2px;
+  opacity: 0.55;
+  user-select: none;
 }
 
 .countdown-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  margin-top: 4px;
 }
 
 .countdown-details .muhurtham-date {
-  font-size: 15px;
+  font-family: var(--font-serif);
+  font-size: 16px;
   font-weight: 700;
   color: #5c1420;
+  letter-spacing: 0.5px;
   margin: 0;
 }
 
 .countdown-details .muhurtham-time {
+  font-family: var(--font-serif);
   font-size: 13px;
-  color: #781c2b;
+  font-weight: 600;
+  color: #7b1c2b;
+  letter-spacing: 0.5px;
   margin: 0;
 }
 

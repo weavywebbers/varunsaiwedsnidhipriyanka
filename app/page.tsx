@@ -28,6 +28,8 @@ export default function Home() {
   const activeTrackRef = useRef<TrackKey>('main');
   const isPlayingRef = useRef<boolean>(false);
   isPlayingRef.current = isPlaying;
+  const isUserPausedRef = useRef<boolean>(false);
+  const audioUnlockedOnceRef = useRef<boolean>(false);
 
   // Direct Audio Element Refs (in DOM for bulletproof mobile/Safari playback)
   const mainAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -42,7 +44,7 @@ export default function Home() {
     return null;
   }, []);
 
-  // Universal Play Function: ensures target track plays, others pause
+  // Universal Play Function: ensures target track plays, others pause without resetting positions
   const playTrack = useCallback(
     (track: TrackKey = 'main') => {
       activeTrackRef.current = track;
@@ -66,6 +68,7 @@ export default function Home() {
           .then(() => {
             setIsPlaying(true);
             isPlayingRef.current = true;
+            audioUnlockedOnceRef.current = true;
           })
           .catch((err) => {
             // Autoplay blocked pending user gesture; will start on first touch/scroll
@@ -76,7 +79,7 @@ export default function Home() {
     [getAudio]
   );
 
-  // Track switching during scroll
+  // Track switching during scroll - pauses and plays seamlessly without resetting currentTime
   const switchTrack = useCallback(
     (newKey: TrackKey) => {
       if (activeTrackRef.current === newKey) return;
@@ -90,8 +93,8 @@ export default function Home() {
         oldAudio.pause();
       }
 
-      if (isPlayingRef.current && newAudio) {
-        newAudio.currentTime = 0;
+      // If user hasn't manually paused music, resume new track from where it left off
+      if (isPlayingRef.current && !isUserPausedRef.current && newAudio) {
         newAudio.volume = 0.75;
         newAudio
           .play()
@@ -105,7 +108,7 @@ export default function Home() {
     [getAudio]
   );
 
-  // 1. First Load Autoplay & Gesture Unlock Listeners
+  // 1. First Load Autoplay & One-Time Gesture Unlock Listener
   useEffect(() => {
     // Check ?hero query param to skip curtain for direct access if requested
     if (typeof window !== 'undefined') {
@@ -118,13 +121,6 @@ export default function Home() {
     // Attempt playback immediately on page load!
     playTrack('main');
 
-    // Also listen to any user gesture to guarantee audio starts immediately if browser restricted cold autoplay
-    const triggerAudioUnlock = () => {
-      if (!isPlayingRef.current) {
-        playTrack(activeTrackRef.current);
-      }
-    };
-
     const gestureEvents = [
       'click',
       'touchstart',
@@ -136,14 +132,28 @@ export default function Home() {
       'keydown',
     ];
 
+    const removeGestureListeners = () => {
+      gestureEvents.forEach((evt) => {
+        window.removeEventListener(evt, triggerAudioUnlock);
+      });
+    };
+
+    const triggerAudioUnlock = () => {
+      if (audioUnlockedOnceRef.current || isUserPausedRef.current) {
+        removeGestureListeners();
+        return;
+      }
+      playTrack(activeTrackRef.current);
+      // Clean up after first user gesture so it never interferes with user pause/mute controls
+      removeGestureListeners();
+    };
+
     gestureEvents.forEach((evt) => {
       window.addEventListener(evt, triggerAudioUnlock, { passive: true });
     });
 
     return () => {
-      gestureEvents.forEach((evt) => {
-        window.removeEventListener(evt, triggerAudioUnlock);
-      });
+      removeGestureListeners();
     };
   }, [playTrack]);
 
@@ -203,8 +213,10 @@ export default function Home() {
 
   // Handle Curtain Unlock: starts music immediately, reveals hero, and unlocks scroll after fade
   const handleUnlock = () => {
-    // 1. Play main track immediately
-    playTrack('main');
+    // 1. Play main track immediately if user hasn't explicitly paused
+    if (!isUserPausedRef.current) {
+      playTrack('main');
+    }
 
     // 2. Trigger hero text reveal
     const heroEl = document.getElementById('hero');
@@ -218,22 +230,27 @@ export default function Home() {
     }, 1200);
   };
 
-  // Toggle Music (Mute / Unmute)
+  // Toggle Music (Pause / Play without resetting)
   const handleToggleMusic = () => {
     const currentAudio = getAudio(activeTrackRef.current);
     if (!currentAudio) return;
 
-    if (isPlaying) {
+    if (isPlayingRef.current) {
+      // Pause active audio without resetting currentTime
       currentAudio.pause();
+      isUserPausedRef.current = true;
       setIsPlaying(false);
       isPlayingRef.current = false;
     } else {
+      // Resume active audio from where it was paused
+      isUserPausedRef.current = false;
       currentAudio.volume = 0.75;
       currentAudio
         .play()
         .then(() => {
           setIsPlaying(true);
           isPlayingRef.current = true;
+          audioUnlockedOnceRef.current = true;
         })
         .catch(() => {
           setIsPlaying(false);

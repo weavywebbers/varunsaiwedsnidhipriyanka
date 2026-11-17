@@ -21,7 +21,10 @@ export default function HeaderControls({
       <button
         type="button"
         className={`control-btn map-btn ${isMapOpen ? 'is-active' : ''}`}
-        onClick={onToggleMap}
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggleMap();
+        }}
         aria-label={isMapOpen ? 'Close Map Overlay' : 'Open Venue Maps'}
         title={isMapOpen ? 'Close Maps' : 'View Venue Locations'}
       >
@@ -62,9 +65,12 @@ export default function HeaderControls({
       <button
         type="button"
         className={`control-btn music-btn ${isPlaying ? 'is-playing' : 'is-muted'}`}
-        onClick={onToggleMusic}
-        aria-label={isPlaying ? 'Mute Music' : 'Play Music'}
-        title={isPlaying ? 'Mute Music' : 'Play Music'}
+        onClick={(e) => {
+          e.stopPropagation();
+          onToggleMusic();
+        }}
+        aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
+        title={isPlaying ? 'Pause Music' : 'Play Music'}
       >
         <span className="btn-icon-wrapper">
           {isPlaying ? (
