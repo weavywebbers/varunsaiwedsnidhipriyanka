@@ -2632,27 +2632,35 @@ section,
    ========================================================================== */
 .invited-section {
   background-color: #2b040a;
+  background-image: url('/assets/img/4b7b14230bab4ecf.webp');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.invited-section .section-bg-wrapper {
+  display: none;
 }
 
 .invited-content {
   position: relative;
-  z-index: 5;
+  z-index: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 90%;
   max-width: 360px;
-  padding: 36px 12px 42px;
+  padding: 10px 12px 10px;
   margin: auto 0;
 }
 
 /* Top Divine Deity Icon (Sri Sita Rama Lakshmana & Hanuman) */
 .invited-deity-art {
-  width: 175px;
-  max-width: 50%;
+  width: 135px;
+  max-width: 44%;
   height: auto;
-  margin: 0 auto 18px;
+  margin: 0 auto 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2667,22 +2675,22 @@ section,
 }
 
 .blessings-header {
-  margin-bottom: 22px;
+  margin-bottom: 14px;
 }
 
 .compliments-tag {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 13.5px;
+  font-size: 13px;
   letter-spacing: 0.6px;
   color: #fae4be;
-  margin: 0 0 5px 0;
+  margin: 0 0 3px 0;
   text-transform: uppercase;
 }
 
 .invited-heading {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #fae4be;
@@ -2695,7 +2703,7 @@ section,
   border: none;
   border-radius: 0;
   padding: 0;
-  margin-bottom: 26px;
+  margin-bottom: 16px;
   width: 100%;
   box-shadow: none;
 }
@@ -2703,24 +2711,24 @@ section,
 .telugu-invite {
   font-family: var(--font-telugu), var(--font-serif);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.45;
   color: #fae4be;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   letter-spacing: 0.2px;
 }
 
 .telugu-author {
   font-family: var(--font-telugu), var(--font-serif);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
   color: #fff1c4;
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
 }
 
 .english-author {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 15.5px;
+  font-size: 15px;
   color: #fae4be;
   font-weight: 400;
   margin: 0;
@@ -2730,7 +2738,7 @@ section,
   background: transparent;
   border: none;
   padding: 0;
-  margin-bottom: 26px;
+  margin-bottom: 16px;
   width: 100%;
 }
 
@@ -2740,7 +2748,7 @@ section,
   letter-spacing: 1.2px;
   color: #fae4be;
   opacity: 0.95;
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   text-transform: uppercase;
 }
 
@@ -2750,7 +2758,7 @@ section,
   align-items: center;
   justify-content: center;
   gap: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   line-height: 1.35;
   text-align: center;
 }
@@ -2767,7 +2775,7 @@ section,
 
 .host-names {
   font-family: var(--font-serif);
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 700;
   color: #fff4cb;
   letter-spacing: 0.3px;
@@ -2780,7 +2788,7 @@ section,
   font-style: italic;
   font-size: 13px;
   color: #fae4be;
-  margin: 8px 0 0 0;
+  margin: 4px 0 0 0;
   opacity: 0.95;
 }
 
@@ -2794,8 +2802,8 @@ section,
 
 .closing-text {
   font-family: var(--font-serif);
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 12.5px;
+  line-height: 1.5;
   color: #fae4be;
   margin: 0;
   opacity: 0.95;
@@ -2804,8 +2812,8 @@ section,
 
 /* Assistance Card & Contact Numbers */
 .assistance-card {
-  margin-top: 20px;
-  padding-top: 14px;
+  margin-top: 14px;
+  padding-top: 10px;
   border-top: 1px solid rgba(250, 228, 190, 0.25);
   width: 100%;
   display: flex;
@@ -2851,6 +2859,34 @@ section,
   color: #fae4be;
   opacity: 0.5;
   font-size: 11px;
+}
+
+/* Zero Degree Labs Bottom Credits Link */
+.zerodegree-credits {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zerodegree-link {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.zerodegree-link:hover {
+  transform: scale(1.05);
+  text-decoration: underline;
 }
 
 .bottom-map-cta {

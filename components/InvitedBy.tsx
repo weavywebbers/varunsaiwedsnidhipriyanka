@@ -82,6 +82,18 @@ export default function InvitedBy({ onOpenMap }: InvitedByProps) {
             <a href="tel:8686298971" className="assistance-phone">8686298971</a>
           </div>
         </div>
+
+        {/* Zero˚Labs Footer Link */}
+        <div className="zerodegree-credits">
+          <a
+            href="https://zerodegreelabs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="zerodegree-link"
+          >
+            Zero˚Labs
+          </a>
+        </div>
       </div>
     </section>
   );
