@@ -110,18 +110,18 @@ export default function Sangeet() {
         <h2 className="sangeet-title ink-write">SANGEET NIGHT</h2>
 
         <div className="sangeet-date-block ink-write">
-          <p className="sangeet-day-text ink-write">Wednesday,</p>
-          <div className="sangeet-date-badge ink-write">
+          <p className="sangeet-day-text">Wednesday,</p>
+          <div className="sangeet-date-badge">
             <span className="sangeet-date-num">25</span>
             <span className="sangeet-date-th">th</span>
           </div>
-          <p className="sangeet-month-year ink-write">November 2026</p>
-          <p className="sangeet-time ink-write">7:00 PM Onwards</p>
+          <p className="sangeet-month-year">November 2026</p>
+          <p className="sangeet-time">7:00 PM Onwards</p>
         </div>
 
         <div className="sangeet-venue-block ink-write">
-          <p className="sangeet-venue-name ink-write">Mango Farmstay Resort</p>
-          <p className="sangeet-venue-loc ink-write">Inavolu, Warangal</p>
+          <p className="sangeet-venue-name">Mango Farmstay Resort</p>
+          <p className="sangeet-venue-loc">Inavolu, Warangal</p>
         </div>
       </div>
     </section>

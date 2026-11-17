@@ -780,7 +780,7 @@ section,
 
 .hero-honorific {
   font-family: var(--font-serif);
-  font-size: 12.5px;
+  font-size: 13px;
   color: var(--color-gold);
   opacity: 0.9;
   letter-spacing: 0.3px;
@@ -790,7 +790,7 @@ section,
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: 20.5px;
+  font-size: 24.5px;
   font-weight: 700;
   color: var(--color-gold);
   letter-spacing: 0.4px;
@@ -802,7 +802,7 @@ section,
 
 .hero-degree {
   font-family: var(--font-serif);
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic;
   color: var(--color-gold);
   opacity: 0.9;
@@ -812,7 +812,7 @@ section,
 
 .hero-weds {
   font-family: 'Homemade Apple', var(--font-serif), cursive;
-  font-size: 17.5px;
+  font-size: 19px;
   font-style: italic;
   color: var(--color-gold);
   margin: 2px 0;
@@ -847,7 +847,7 @@ section,
 }
 
 .hero-venue-name {
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--color-gold);
@@ -857,7 +857,7 @@ section,
 }
 
 .hero-venue-address {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--color-gold);
   margin: 0;
   opacity: 0.9;
@@ -881,7 +881,7 @@ section,
 }
 
 .hero-date-day {
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
@@ -889,7 +889,7 @@ section,
 }
 
 .hero-date-th {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-gold);
   line-height: 1;
@@ -897,7 +897,7 @@ section,
 }
 
 .hero-date-month {
-  font-size: 17.5px;
+  font-size: 18.5px;
   font-style: italic;
   color: var(--color-gold);
   margin-top: 1px;
@@ -921,37 +921,37 @@ section,
   }
 
   .hero-name {
-    font-size: 19px;
+    font-size: 22px;
   }
 
   .hero-honorific,
   .hero-degree {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .hero-weds {
-    font-size: 16px;
+    font-size: 17.5px;
     margin: 1px 0;
   }
 
   .hero-divider img {
-    width: 180px;
+    width: 185px;
   }
 
   .hero-venue-name {
-    font-size: 12.5px;
+    font-size: 14px;
   }
 
   .hero-venue-address {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .hero-date-day {
-    font-size: 26px;
+    font-size: 33px;
   }
 
   .hero-date-month {
-    font-size: 16px;
+    font-size: 16.5px;
   }
 }
 
@@ -1079,83 +1079,27 @@ section,
 }
 
 /* ==========================================================================
-   Scroll-Driven Text Write-In / Come Live Animation
+   Scroll-Driven Text Reveal Animation (Fast, Crisp, High-Contrast)
    ========================================================================== */
 .ink-write {
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  filter: blur(5px);
-  transition: opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.25s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 1.25s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform, filter;
+  opacity: 1;
+  transform: translateY(0);
+  filter: none;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Initial subtle enter when section enters view */
+.section-hero:not(.section-in-view) .ink-write,
+.section-sangeet:not(.section-in-view) .ink-write,
+.section-haldi:not(.section-in-view) .ink-write {
+  opacity: 0.7;
 }
 
 .section-in-view .ink-write {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
-}
-
-/* Staggered delay for lines to appear written sequentially with a smooth, unhurried pace */
-.section-in-view .ink-write:nth-child(1),
-.section-in-view .ink-write:nth-of-type(1) {
-  transition-delay: 0.12s;
-}
-
-.section-in-view .ink-write:nth-child(2),
-.section-in-view .ink-write:nth-of-type(2) {
-  transition-delay: 0.30s;
-}
-
-.section-in-view .ink-write:nth-child(3),
-.section-in-view .ink-write:nth-of-type(3) {
-  transition-delay: 0.48s;
-}
-
-.section-in-view .ink-write:nth-child(4),
-.section-in-view .ink-write:nth-of-type(4) {
-  transition-delay: 0.66s;
-}
-
-.section-in-view .ink-write:nth-child(5),
-.section-in-view .ink-write:nth-of-type(5) {
-  transition-delay: 0.84s;
-}
-
-.section-in-view .ink-write:nth-child(6),
-.section-in-view .ink-write:nth-of-type(6) {
-  transition-delay: 1.02s;
-}
-
-.section-in-view .ink-write:nth-child(7),
-.section-in-view .ink-write:nth-of-type(7) {
-  transition-delay: 1.20s;
-}
-
-.section-in-view .ink-write:nth-child(8),
-.section-in-view .ink-write:nth-of-type(8) {
-  transition-delay: 1.38s;
-}
-
-.section-in-view .ink-write:nth-child(9),
-.section-in-view .ink-write:nth-of-type(9) {
-  transition-delay: 1.56s;
-}
-
-.section-in-view .ink-write:nth-child(10),
-.section-in-view .ink-write:nth-of-type(10) {
-  transition-delay: 1.74s;
-}
-
-.section-in-view .ink-write:nth-child(11),
-.section-in-view .ink-write:nth-of-type(11) {
-  transition-delay: 1.92s;
-}
-
-.section-in-view .ink-write:nth-child(12),
-.section-in-view .ink-write:nth-of-type(12) {
-  transition-delay: 2.10s;
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: none !important;
 }
 
 /* ==========================================================================
@@ -2315,7 +2259,7 @@ section,
 
 .sangeet-date-num {
   font-family: var(--font-serif);
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 700;
   color: #eecb82;
   line-height: 1;
@@ -2324,14 +2268,14 @@ section,
 
 .sangeet-date-th {
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: 16px;
   color: #eecb82;
   margin-left: 2px;
 }
 
 .sangeet-month-year {
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: 15.5px;
   color: #dfbe7e;
   margin: 0;
   opacity: 0.95;
@@ -2340,7 +2284,8 @@ section,
 
 .sangeet-time {
   font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-size: 17px;
+  font-weight: 600;
   color: #dfbe7e;
   margin: 0;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
@@ -2956,8 +2901,10 @@ a[href*="framer.com"] {
 /* ==========================================================================
    Tablet Portrait View (iPad Mini, iPad Air, iPad Pro, Android Tablets: 481px to 1024px)
    Eliminates skinny stretched aspect ratio by expanding card proportionally
+   and scaling typography for crisp, bold legibility on larger screens
    ========================================================================== */
-@media (min-width: 481px) and (orientation: portrait), (min-width: 481px) and (max-aspect-ratio: 1/1) {
+@media (min-width: 481px) and (orientation: portrait),
+(min-width: 481px) and (max-aspect-ratio: 1/1) {
   :root {
     --frame-max-width: min(92vw, calc(100dvh * 0.60), 640px);
   }
@@ -2979,283 +2926,354 @@ a[href*="framer.com"] {
     right: 20px;
   }
 
+  /* Hero on Tablet */
   .hero-unified-container {
-    max-width: 460px;
+    max-width: 480px;
     padding: clamp(48px, 6vh, 60px) 16px 8px;
   }
 
   .hero-ganesha img {
-    width: 54px;
+    width: 56px;
   }
 
   .hero-sloka {
-    font-size: 14px;
+    font-size: 14.5px;
     margin: 0 0 clamp(90px, 11vh, 115px) 0;
   }
 
   .hero-name {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .hero-degree {
-    font-size: 13.5px;
+    font-size: 14.5px;
   }
 
   .hero-honorific {
-    font-size: 14px;
+    font-size: 14.5px;
   }
 
   .hero-weds {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .hero-divider img {
-    width: 240px;
-    max-width: 75%;
+    width: 250px;
+    max-width: 78%;
   }
 
   .hero-venue-name {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .hero-venue-address {
-    font-size: 13px;
+    font-size: 14.5px;
   }
 
   .hero-date-day {
-    font-size: 32px;
+    font-size: 44px;
   }
 
   .hero-date-th {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .hero-date-month {
-    font-size: 19px;
+    font-size: 21px;
   }
 
   /* Countdown on Tablet */
   .countdown-content {
-    max-width: 380px;
+    max-width: 400px;
   }
 
   .countdown-title {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .countdown-timer-grid {
-    max-width: 290px;
-    gap: 6px;
+    max-width: 310px;
+    gap: 7px;
   }
 
   .time-box {
-    min-width: 52px;
+    min-width: 54px;
   }
 
   .time-value {
-    font-size: 29px;
+    font-size: 30px;
   }
 
   .time-label {
-    font-size: 10px;
+    font-size: 10.5px;
   }
 
   /* Haldi on Tablet */
   .haldi-content {
-    max-width: 440px;
-  }
-
-  /* Sangeet on Tablet */
-  .sangeet-content {
-    max-width: 440px;
-    padding: clamp(95px, 11.5vh, 125px) 16px 16px;
-  }
-
-  .sangeet-title {
-    font-size: 32px;
-  }
-
-  .sangeet-venue-name {
-    font-size: 19.5px;
-  }
-
-  .sangeet-venue-loc {
-    font-size: 16.5px;
-  }
-
-  /* Wedding Invitation on Tablet */
-  .wedding-content {
-    max-width: 440px;
-  }
-
-  .muhurtham-card {
-    max-width: 380px;
-  }
-
-  .wedding-venue-card {
-    max-width: 380px;
-  }
-
-  /* Invited By on Tablet */
-  .invited-content {
-    max-width: 440px;
-  }
-
-  .maps-overlay-card {
-    max-width: 440px;
-  }
-}
-
-
-/* ==========================================================================
-   Tablet Portrait View (iPad Mini, iPad Air, iPad Pro, Android Tablets: 481px to 1024px)
-   Eliminates skinny stretched aspect ratio by expanding card proportionally
-   ========================================================================== */
-@media (min-width: 481px) and (orientation: portrait), (min-width: 481px) and (max-aspect-ratio: 1/1) {
-  :root {
-    --frame-max-width: min(92vw, calc(100dvh * 0.60), 640px);
-  }
-
-  .header-controls {
-    right: calc(50% - (var(--frame-max-width) / 2) + 20px);
-  }
-
-  .hanging-diya {
-    width: 68px;
-    top: -4px;
-  }
-
-  .hanging-diya.left-diya {
-    left: 20px;
-  }
-
-  .hanging-diya.right-diya {
-    right: 20px;
-  }
-
-  .hero-unified-container {
     max-width: 460px;
-    padding: clamp(48px, 6vh, 60px) 16px 8px;
   }
 
-  .hero-ganesha img {
-    width: 54px;
+  .haldi-title {
+    font-size: 34px;
   }
 
-  .hero-sloka {
-    font-size: 14px;
-    margin: 0 0 clamp(90px, 11vh, 115px) 0;
+  .haldi-day-text {
+    font-size: 17px;
   }
 
-  .hero-name {
-    font-size: 24px;
+  .haldi-date-num {
+    font-size: 46px;
   }
 
-  .hero-degree {
-    font-size: 13.5px;
-  }
-
-  .hero-honorific {
-    font-size: 14px;
-  }
-
-  .hero-weds {
-    font-size: 20px;
-  }
-
-  .hero-divider img {
-    width: 240px;
-    max-width: 75%;
-  }
-
-  .hero-venue-name {
-    font-size: 15px;
-  }
-
-  .hero-venue-address {
-    font-size: 13px;
-  }
-
-  .hero-date-day {
-    font-size: 32px;
-  }
-
-  .hero-date-th {
-    font-size: 16px;
-  }
-
-  .hero-date-month {
+  .haldi-date-th {
     font-size: 19px;
   }
 
-  /* Countdown on Tablet */
-  .countdown-content {
-    max-width: 380px;
+  .haldi-month-year {
+    font-size: 17.5px;
   }
 
-  .countdown-title {
+  .haldi-time {
+    font-size: 20px;
+  }
+
+  .haldi-venue-name {
+    font-size: 19px;
+  }
+
+  .haldi-venue-loc {
     font-size: 16px;
-  }
-
-  .countdown-timer-grid {
-    max-width: 290px;
-    gap: 6px;
-  }
-
-  .time-box {
-    min-width: 52px;
-  }
-
-  .time-value {
-    font-size: 29px;
-  }
-
-  .time-label {
-    font-size: 10px;
-  }
-
-  /* Haldi on Tablet */
-  .haldi-content {
-    max-width: 440px;
   }
 
   /* Sangeet on Tablet */
   .sangeet-content {
-    max-width: 440px;
+    max-width: 460px;
     padding: clamp(95px, 11.5vh, 125px) 16px 16px;
   }
 
+  .sangeet-eyebrow {
+    font-size: 14.5px;
+  }
+
   .sangeet-title {
-    font-size: 32px;
+    font-size: 34px;
+  }
+
+  .sangeet-day-text {
+    font-size: 17px;
+  }
+
+  .sangeet-date-num {
+    font-size: 46px;
+  }
+
+  .sangeet-date-th {
+    font-size: 19px;
+  }
+
+  .sangeet-month-year {
+    font-size: 17.5px;
+  }
+
+  .sangeet-time {
+    font-size: 20px;
   }
 
   .sangeet-venue-name {
-    font-size: 19.5px;
+    font-size: 21px;
   }
 
   .sangeet-venue-loc {
-    font-size: 16.5px;
+    font-size: 17.5px;
   }
 
-  /* Wedding Invitation on Tablet */
+  /* Wedding Invitation on Tablet (Scaled up for crisp legibility) */
   .wedding-content {
-    max-width: 440px;
+    max-width: 480px;
+    padding: clamp(28px, 3.5vh, 40px) 16px 16px;
+  }
+
+  .wedding-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .honorific {
+    font-size: 14px;
+  }
+
+  .person-name {
+    font-size: 28px;
+    margin: 3px 0 4px 0;
+  }
+
+  .person-name .degree {
+    font-size: 15.5px;
+  }
+
+  .relation-text {
+    font-size: 14px;
+    margin: 0 0 3px 0;
+  }
+
+  .parent-names {
+    font-size: 15.5px;
+  }
+
+  .parent-prefix {
+    font-size: 14px;
+  }
+
+  .parent-actual-names {
+    font-size: 16px;
+  }
+
+  .weds-script {
+    font-size: 24px;
   }
 
   .muhurtham-card {
-    max-width: 380px;
+    max-width: 400px;
+    margin-bottom: 14px;
+  }
+
+  .muhurtham-badge {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .muhurtham-time {
+    font-size: 30px;
+  }
+
+  .muhurtham-date {
+    font-size: 16.5px;
+  }
+
+  .muhurtham-lagnam {
+    font-size: 14.5px;
   }
 
   .wedding-venue-card {
-    max-width: 380px;
+    max-width: 400px;
+    padding: 14px 20px 16px;
   }
 
-  /* Invited By on Tablet */
+  .venue-title-sub {
+    font-size: 12px;
+    letter-spacing: 2.2px;
+  }
+
+  .wedding-venue-name {
+    font-size: 19.5px;
+  }
+
+  .wedding-venue-addr {
+    font-size: 14.5px;
+    margin: 3px 0 10px 0;
+  }
+
+  .venue-map-trigger-btn {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  /* Invited By on Tablet (Scaled up for crisp legibility) */
   .invited-content {
-    max-width: 440px;
+    max-width: 480px;
+    padding: clamp(28px, 3.5vh, 40px) 16px 16px;
+  }
+
+  .blessings-header {
+    margin-bottom: 16px;
+  }
+
+  .compliments-tag {
+    font-size: 14.5px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .invited-heading {
+    font-size: 24px;
+    letter-spacing: 1.2px;
+  }
+
+  .nephew-card {
+    margin-bottom: 18px;
+  }
+
+  .telugu-invite {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .telugu-author {
+    font-size: 23px;
+    margin-bottom: 4px;
+  }
+
+  .english-author {
+    font-size: 17.5px;
+  }
+
+  .family-hosts-card {
+    margin-bottom: 18px;
+  }
+
+  .hosts-tag {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .host-entry {
+    margin-bottom: 8px;
+  }
+
+  .host-prefix {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+
+  .host-names {
+    font-size: 19px;
+  }
+
+  .friends-tag {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
+  .closing-message-card {
+    max-width: 400px;
+  }
+
+  .closing-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .assistance-card {
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .assistance-label {
+    font-size: 13px;
+    letter-spacing: 1.6px;
+  }
+
+  .assistance-phone {
+    font-size: 16px;
+  }
+
+  .zerodegree-link {
+    font-size: 14px;
   }
 
   .maps-overlay-card {
-    max-width: 440px;
+    max-width: 480px;
   }
 }
