@@ -737,7 +737,7 @@ section,
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
-  padding: clamp(20px, 3vh, 28px) 10px 4px;
+  padding: clamp(38px, 5vh, 46px) 10px 4px;
   box-sizing: border-box;
   z-index: 10;
   position: relative;
@@ -751,15 +751,15 @@ section,
 }
 
 .hero-ganesha img {
-  width: 44px;
+  width: 48px;
   height: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
 }
 
 .hero-sloka {
-  font-size: 12px;
-  line-height: 1.2;
+  font-size: 12.5px;
+  line-height: 1.25;
   color: var(--color-gold);
   letter-spacing: 0.5px;
   margin: 0 0 5px 0;
@@ -779,7 +779,7 @@ section,
 
 .hero-honorific {
   font-family: var(--font-serif);
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--color-gold);
   opacity: 0.9;
   letter-spacing: 0.3px;
@@ -789,7 +789,7 @@ section,
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: 19px;
+  font-size: 20.5px;
   font-weight: 700;
   color: var(--color-gold);
   letter-spacing: 0.4px;
@@ -801,7 +801,7 @@ section,
 
 .hero-degree {
   font-family: var(--font-serif);
-  font-size: 11.5px;
+  font-size: 12px;
   font-style: italic;
   color: var(--color-gold);
   opacity: 0.9;
@@ -811,10 +811,10 @@ section,
 
 .hero-weds {
   font-family: 'Homemade Apple', var(--font-serif), cursive;
-  font-size: 16px;
+  font-size: 17.5px;
   font-style: italic;
   color: var(--color-gold);
-  margin: 1px 0;
+  margin: 2px 0;
   text-align: center;
   opacity: 0.95;
   letter-spacing: 0.4px;
@@ -830,8 +830,8 @@ section,
 }
 
 .hero-divider img {
-  width: 180px;
-  max-width: 65%;
+  width: 195px;
+  max-width: 68%;
   height: auto;
   display: block;
 }
@@ -846,7 +846,7 @@ section,
 }
 
 .hero-venue-name {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--color-gold);
@@ -856,7 +856,7 @@ section,
 }
 
 .hero-venue-address {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--color-gold);
   margin: 0;
   opacity: 0.9;
@@ -880,7 +880,7 @@ section,
 }
 
 .hero-date-day {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
@@ -888,7 +888,7 @@ section,
 }
 
 .hero-date-th {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--color-gold);
   line-height: 1;
@@ -896,7 +896,7 @@ section,
 }
 
 .hero-date-month {
-  font-size: 16.5px;
+  font-size: 17.5px;
   font-style: italic;
   color: var(--color-gold);
   margin-top: 1px;
@@ -906,51 +906,51 @@ section,
 
 @media (max-width: 370px) {
   .hero-unified-container {
-    padding: clamp(16px, 2.5vh, 24px) 6px 4px;
-    max-width: 340px;
+    padding: clamp(32px, 4.5vh, 40px) 6px 4px;
+    max-width: 345px;
   }
 
   .hero-ganesha img {
-    width: 40px;
+    width: 44px;
   }
 
   .hero-sloka {
-    font-size: 11.5px;
+    font-size: 12px;
     margin: 0 0 4px 0;
   }
 
   .hero-name {
-    font-size: 17.5px;
+    font-size: 19px;
   }
 
   .hero-honorific,
   .hero-degree {
-    font-size: 10.5px;
+    font-size: 11px;
   }
 
   .hero-weds {
-    font-size: 15px;
-    margin: 0;
+    font-size: 16px;
+    margin: 1px 0;
   }
 
   .hero-divider img {
-    width: 160px;
+    width: 180px;
   }
 
   .hero-venue-name {
-    font-size: 12px;
+    font-size: 12.5px;
   }
 
   .hero-venue-address {
-    font-size: 10.5px;
+    font-size: 11px;
   }
 
   .hero-date-day {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .hero-date-month {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -2252,7 +2252,7 @@ section,
   }
 }
 
-/* Sangeet Content: Positioned downward so the resort name sits close right above the pandiri */
+/* Sangeet Content: Positioned with at least 100px space from top so the resort name sits close right above the pandiri */
 .sangeet-content {
   position: relative;
   z-index: 10;
@@ -2262,7 +2262,7 @@ section,
   text-align: center;
   width: 90%;
   max-width: 350px;
-  padding: clamp(45px, 6vh, 65px) 10px 10px;
+  padding: 100px 10px 10px;
   margin: 0 auto;
 }
 
@@ -2519,14 +2519,18 @@ section,
 }
 
 .muhurtham-card {
-  background: rgba(45, 5, 12, 0.78);
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  border-radius: 14px;
-  padding: 12px 16px;
-  margin-bottom: 16px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 12px;
   width: 100%;
   max-width: 320px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .muhurtham-badge {
@@ -2554,36 +2558,49 @@ section,
   font-size: 12px;
   color: var(--color-gold);
   font-style: italic;
-  margin-top: 4px;
+  margin-top: 3px;
   opacity: 0.9;
 }
 
 .wedding-venue-card {
+  background: rgba(45, 5, 12, 0.78);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 14px;
+  padding: 12px 16px 14px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 3px;
 }
 
 .venue-title-sub {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  color: var(--color-gold);
-  opacity: 0.8;
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  color: var(--color-gold-bright);
+  font-weight: 700;
+  opacity: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 2px;
 }
 
 .wedding-venue-name {
-  font-size: 16px;
+  font-size: 16.5px;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
+  letter-spacing: 0.5px;
 }
 
 .wedding-venue-addr {
   font-size: 12.5px;
   color: var(--color-gold-light);
-  margin: 0 0 10px 0;
-  opacity: 0.9;
+  margin: 2px 0 10px 0;
+  opacity: 0.92;
 }
 
 .venue-map-trigger-btn {
