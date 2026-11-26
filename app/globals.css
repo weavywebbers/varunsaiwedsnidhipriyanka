@@ -728,21 +728,34 @@ section,
   background-color: var(--color-maroon-deep);
   justify-content: flex-start !important;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-unified-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  text-align: center;
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-height: 100dvh;
   margin: 0 auto;
-  padding: clamp(20px, 3vh, 28px) 10px 4px;
-  box-sizing: border-box;
-  z-index: 10;
   position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  padding: 0 12px;
+  overflow: hidden;
+}
+
+/* 1. Top Invocation: Placed in the Lotus Arch between the Lanterns */
+.hero-top-invocation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(18px, 2.8vh, 26px);
+  flex-shrink: 0;
 }
 
 .hero-ganesha {
@@ -753,21 +766,34 @@ section,
 }
 
 .hero-ganesha img {
-  width: 44px;
+  width: clamp(42px, 5.5vh, 48px);
   height: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
 }
 
 .hero-sloka {
-  font-size: 12px;
+  font-size: clamp(11.5px, 1.5vh, 12.5px);
   line-height: 1.2;
   color: var(--color-gold);
   letter-spacing: 0.5px;
-  margin: 0 0 5px 0;
+  margin: 2px 0 0 0;
   text-align: center;
   opacity: 0.95;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* 2. Main Announcement Card: Centered between the moving diyas and the dance image */
+.hero-announcement-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding-top: clamp(10px, 2vh, 24px);
+  box-sizing: border-box;
 }
 
 .hero-person-block {
@@ -781,29 +807,29 @@ section,
 
 .hero-honorific {
   font-family: var(--font-serif);
-  font-size: 12px;
+  font-size: clamp(11px, 1.5vh, 12.5px);
   color: var(--color-gold);
   opacity: 0.9;
   letter-spacing: 0.3px;
-  margin: 0 0 1px 0;
+  margin: 0;
   text-align: center;
 }
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: 19px;
+  font-size: clamp(20.5px, 2.8vh, 23.5px);
   font-weight: 700;
   color: var(--color-gold);
   letter-spacing: 0.4px;
   text-align: center;
-  margin: 0 0 1px 0;
+  margin: 1px 0;
   line-height: 1.15;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-degree {
   font-family: var(--font-serif);
-  font-size: 11.5px;
+  font-size: clamp(11px, 1.5vh, 12px);
   font-style: italic;
   color: var(--color-gold);
   opacity: 0.9;
@@ -813,10 +839,10 @@ section,
 
 .hero-weds {
   font-family: 'Homemade Apple', var(--font-serif), cursive;
-  font-size: 16px;
+  font-size: clamp(16.5px, 2.2vh, 18.5px);
   font-style: italic;
   color: var(--color-gold);
-  margin: 1px 0;
+  margin: clamp(2px, 0.4vh, 4px) 0;
   text-align: center;
   opacity: 0.95;
   letter-spacing: 0.4px;
@@ -827,13 +853,13 @@ section,
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 3px 0;
-  opacity: 0.45;
+  margin: clamp(4px, 0.8vh, 8px) 0;
+  opacity: 0.5;
 }
 
 .hero-divider img {
-  width: 180px;
-  max-width: 65%;
+  width: clamp(175px, 25vw, 205px);
+  max-width: 68%;
   height: auto;
   display: block;
 }
@@ -843,22 +869,22 @@ section,
   flex-direction: column;
   align-items: center;
   gap: 1px;
-  margin: 0 0 4px 0;
+  margin: 0;
   text-align: center;
 }
 
 .hero-venue-name {
-  font-size: 13px;
+  font-size: clamp(13px, 1.7vh, 14.5px);
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--color-gold);
-  margin: 0;
+  margin: 0 0 1px 0;
   text-transform: uppercase;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero-venue-address {
-  font-size: 11.5px;
+  font-size: clamp(11px, 1.5vh, 12px);
   color: var(--color-gold);
   margin: 0;
   opacity: 0.9;
@@ -870,7 +896,7 @@ section,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin-top: clamp(4px, 0.8vh, 7px);
   text-align: center;
 }
 
@@ -882,7 +908,7 @@ section,
 }
 
 .hero-date-day {
-  font-size: 26px;
+  font-size: clamp(27px, 3.8vh, 32px);
   font-weight: 700;
   color: var(--color-gold);
   line-height: 1;
@@ -890,7 +916,7 @@ section,
 }
 
 .hero-date-th {
-  font-size: 13px;
+  font-size: clamp(13px, 1.8vh, 15px);
   font-weight: 400;
   color: var(--color-gold);
   line-height: 1;
@@ -898,7 +924,7 @@ section,
 }
 
 .hero-date-month {
-  font-size: 16.5px;
+  font-size: clamp(15px, 2.1vh, 17px);
   font-style: italic;
   color: var(--color-gold);
   margin-top: 1px;
@@ -906,23 +932,34 @@ section,
   letter-spacing: 0.4px;
 }
 
+/* 3. Bottom Spacer: Reserves the exact space for the couple illustration */
+.hero-bottom-spacer {
+  width: 100%;
+  height: clamp(220px, 35dvh, 295px);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
 @media (max-width: 370px) {
   .hero-unified-container {
-    padding: clamp(16px, 2.5vh, 24px) 6px 4px;
     max-width: 340px;
+    padding: 0 8px;
+  }
+
+  .hero-top-invocation {
+    padding-top: clamp(14px, 2.2vh, 20px);
   }
 
   .hero-ganesha img {
-    width: 40px;
+    width: 38px;
   }
 
   .hero-sloka {
-    font-size: 11.5px;
-    margin: 0 0 4px 0;
+    font-size: 11px;
   }
 
   .hero-name {
-    font-size: 17.5px;
+    font-size: 19.5px;
   }
 
   .hero-honorific,
@@ -931,16 +968,16 @@ section,
   }
 
   .hero-weds {
-    font-size: 15px;
-    margin: 0;
+    font-size: 15.5px;
+    margin: 1px 0;
   }
 
   .hero-divider img {
-    width: 160px;
+    width: 165px;
   }
 
   .hero-venue-name {
-    font-size: 12px;
+    font-size: 12.5px;
   }
 
   .hero-venue-address {
@@ -948,11 +985,15 @@ section,
   }
 
   .hero-date-day {
-    font-size: 24px;
+    font-size: 25px;
   }
 
   .hero-date-month {
-    font-size: 15px;
+    font-size: 14.5px;
+  }
+
+  .hero-bottom-spacer {
+    height: clamp(210px, 34dvh, 260px);
   }
 }
 
@@ -3103,16 +3144,24 @@ a[href*="framer.com"] {
   /* Hero on Tablet */
   .hero-unified-container {
     max-width: 480px;
-    padding: clamp(48px, 6vh, 60px) 16px 8px;
+    padding: 0 16px;
+  }
+
+  .hero-top-invocation {
+    padding-top: clamp(28px, 4vh, 40px);
   }
 
   .hero-ganesha img {
-    width: 56px;
+    width: 54px;
   }
 
   .hero-sloka {
     font-size: 14.5px;
-    margin: 0 0 clamp(90px, 11vh, 115px) 0;
+    margin: 4px 0 0 0;
+  }
+
+  .hero-announcement-card {
+    padding-top: clamp(16px, 2.5vh, 32px);
   }
 
   .hero-name {
@@ -3129,6 +3178,7 @@ a[href*="framer.com"] {
 
   .hero-weds {
     font-size: 22px;
+    margin: 4px 0;
   }
 
   .hero-divider img {
@@ -3144,8 +3194,12 @@ a[href*="framer.com"] {
     font-size: 14.5px;
   }
 
+  .hero-date {
+    margin-top: 8px;
+  }
+
   .hero-date-day {
-    font-size: 44px;
+    font-size: 40px;
   }
 
   .hero-date-th {
@@ -3153,7 +3207,11 @@ a[href*="framer.com"] {
   }
 
   .hero-date-month {
-    font-size: 21px;
+    font-size: 20px;
+  }
+
+  .hero-bottom-spacer {
+    height: clamp(280px, 36dvh, 380px);
   }
 
   /* Countdown on Tablet */
