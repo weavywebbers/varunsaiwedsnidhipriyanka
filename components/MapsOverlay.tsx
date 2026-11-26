@@ -37,7 +37,7 @@ export default function MapsOverlay({ isOpen, onClose }: MapsOverlayProps) {
         {/* Header with Title and Close Button */}
         <div className="maps-header">
           <div className="maps-header-left">
-            <span className="maps-badge">CELEBRATION VENUES</span>
+            <span className="maps-badge">MARRIAGE VENUE</span>
             <h2 className="maps-title">Location &amp; Directions</h2>
           </div>
           <button
@@ -50,38 +50,12 @@ export default function MapsOverlay({ isOpen, onClose }: MapsOverlayProps) {
           </button>
         </div>
 
-        {/* Venues Scrollable Container: Chronological Order (Haldi & Sangeet first, then Marriage) */}
+        {/* Marriage Ceremony Directions (SV Convention Hall Only) */}
         <div className="maps-body">
-          {/* 1. Haldi & Sangeet Venue (First - Nov 25th) */}
-          <div className="venue-card">
-            <div className="venue-card-header">
-              <span className="venue-type celebration-tag">HALDI &amp; SANGEET</span>
-              <span className="venue-date">25th Nov 2026 • 11 AM &amp; 7 PM</span>
-            </div>
-            <h3 className="venue-name">Mango Farmstay Resort</h3>
-            <p className="venue-address">
-              Inavolu, Warangal District, Telangana 506313
-            </p>
-            <div className="venue-actions">
-              <a
-                href="https://www.google.com/maps/dir/?api=1&destination=Mango+Farmstay+Resort+Inavolu+Warangal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="map-action-btn primary single-action"
-              >
-                <svg className="action-icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                </svg>
-                Get Directions →
-              </a>
-            </div>
-          </div>
-
-          {/* 2. Marriage Ceremony (Second - Nov 28th - No Reception) */}
           <div className="venue-card">
             <div className="venue-card-header">
               <span className="venue-type wedding-tag">MARRIAGE CEREMONY</span>
-              <span className="venue-date">28th Nov 2026 • 11:00 AM</span>
+              <span className="venue-date">Saturday, 28th Nov 2026 • 11:00 AM</span>
             </div>
             <h3 className="venue-name">SV Convention Hall</h3>
             <p className="venue-address">
@@ -89,7 +63,7 @@ export default function MapsOverlay({ isOpen, onClose }: MapsOverlayProps) {
             </p>
             <div className="venue-actions">
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=SV+Convention+Hall+Sneha+Nagar+Waddepally+Hanamkonda"
+                href="https://www.google.com/maps/place/SV+Convention+Hall/@18.0086287,79.5400863,17z/data=!4m6!3m5!1s0x3a334fb2fa2b9b19:0xda5c03902032be08!8m2!3d18.0086287!4d79.5400863!16s%2Fg%2F11fhr1j947"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="map-action-btn primary single-action"
@@ -97,7 +71,7 @@ export default function MapsOverlay({ isOpen, onClose }: MapsOverlayProps) {
                 <svg className="action-icon" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                 </svg>
-                Get Directions →
+                Get Directions on Google Maps →
               </a>
             </div>
           </div>

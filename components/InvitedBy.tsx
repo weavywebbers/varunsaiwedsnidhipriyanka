@@ -83,18 +83,6 @@ export default function InvitedBy({ onOpenMap }: InvitedByProps) {
           </div>
         </div>
       </div>
-
-      {/* Zero˚Labs Footer Link - Bottom Right */}
-      <div className="zerodegree-credits">
-        <a
-          href="https://zerodegreelabs.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="zerodegree-link"
-        >
-          Zero˚Labs
-        </a>
-      </div>
     </section>
   );
 }

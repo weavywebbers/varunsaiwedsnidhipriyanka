@@ -6,10 +6,11 @@ import MapsOverlay from '../components/MapsOverlay';
 import Curtain from '../components/Curtain';
 import Hero from '../components/Hero';
 import Countdown from '../components/Countdown';
-import Haldi from '../components/Haldi';
-import Sangeet from '../components/Sangeet';
 import WeddingInvitation from '../components/WeddingInvitation';
 import InvitedBy from '../components/InvitedBy';
+import VenueMap from '../components/VenueMap';
+import Haldi from '../components/Haldi';
+import Sangeet from '../components/Sangeet';
 
 const AUDIO_SRCS = {
   main: '/assets/music/neeli-meghamulalo.m4a',
@@ -179,7 +180,8 @@ export default function Home() {
 
     if (sangeetEl) {
       const rect = sangeetEl.getBoundingClientRect();
-      if (rect.top <= centerPoint && rect.bottom >= centerPoint) {
+      const isAtBottom = frame.scrollTop + frame.clientHeight >= frame.scrollHeight - 60;
+      if ((rect.top <= centerPoint && rect.bottom >= centerPoint) || isAtBottom) {
         current = 'sangeet';
       }
     }
@@ -319,17 +321,20 @@ export default function Home() {
         {/* 3. Live Countdown Section */}
         <Countdown />
 
-        {/* 4. Haldi Ceremony Section (plays london-thumakda) */}
-        <Haldi />
-
-        {/* 5. Sangeet Night Section (plays vaathi-coming) */}
-        <Sangeet />
-
-        {/* 6. Wedding Invitation Section (plays neeli-meghamulalo) */}
+        {/* 4. Wedding Invitation Section (plays neeli-meghamulalo) */}
         <WeddingInvitation onOpenMap={() => setIsMapOpen(true)} />
 
-        {/* 7. Invited By & Family Hosts Section (plays neeli-meghamulalo) */}
+        {/* 5. Invited By & Family Hosts Section (plays neeli-meghamulalo) */}
         <InvitedBy onOpenMap={() => setIsMapOpen(true)} />
+
+        {/* 6. Venue Map View Section (SV Convention Hall) */}
+        <VenueMap />
+
+        {/* 7. Haldi Ceremony Section (plays london-thumakda) */}
+        <Haldi />
+
+        {/* 8. Sangeet Night Section (plays vaathi-coming) */}
+        <Sangeet />
       </main>
     </>
   );
